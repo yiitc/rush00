@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush02.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: caisik <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/28 18:11:11 by caisik            #+#    #+#             */
+/*   Updated: 2026/06/28 18:11:12 by caisik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 void	ft_putchar(char c);
 
-void	ft_liner(int x, char *letters)
+void	ft_liner(int row, char *letters)
 {
-	int	cur_x;
+	int	current_row;
 
-	cur_x = 1;
-	while (cur_x <= x)
+	current_row = 1;
+	while (current_row <= row)
 	{
-		if (cur_x == 1)
+		if (current_row == 1)
 		{
 			ft_putchar(letters[0]);
 		}
-		else if (cur_x == x)
+		else if (current_row == row)
 		{
 			ft_putchar(letters[2]);
 		}
@@ -19,33 +31,33 @@ void	ft_liner(int x, char *letters)
 		{
 			ft_putchar(letters[1]);
 		}
-		cur_x++;
+		current_row++;
 	}
 }
 
-void	rush(int x, int y)
+void	rush(int row, int column)
 {
-	int	cur_y;
+	int	current_column;
 
-	cur_y = 1;
-	if (x >= 1 && y >= 1)
+	current_column = 1;
+	if (row >= 1 && column >= 1)
 	{
-		while (cur_y <= y)
+		while (current_column <= column)
 		{
-			if (cur_y == 1)
+			if (current_column == 1)
 			{
-				ft_liner(x, "ABA");
+				ft_liner(row, "ABA");
 			}
-			else if (cur_y == y)
+			else if (current_column == column)
 			{
-				ft_liner(x, "CBC");
+				ft_liner(row, "CBC");
 			}
 			else
 			{
-				ft_liner(x, "B B");
+				ft_liner(row, "B B");
 			}
 			ft_putchar('\n');
-			cur_y++;
+			current_column++;
 		}
 	}
 }
